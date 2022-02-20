@@ -21,7 +21,7 @@ pokemonList = [{
         name: 'Pikachu',
         height: 0.4,
         type: ['fleid', 'fairy']
-    }
+    },
 
     {
         name: 'Ditto',
