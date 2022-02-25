@@ -32,8 +32,8 @@ let pokemonList = [
 
     for (let i=0; i < pokemonList.length; i++){
         if(pokemonList[i].height > 3){
-          document.write(pokemonList[i].name + "( height : " + pokemonList[i].height + ")" + "Wow it`s a big pokemon!!!")
+          document.write(pokemonList[i].name + "( height : " + pokemonList[i].height + ")" + "Wow it`s a big pokemon!!! <br>")
         }else {
-        document.write(pokemonList[i].name + "( height : " + pokemonList[i].height + ")")
+        document.write(pokemonList[i].name + "( height : " + pokemonList[i].height + ")<br>")
       }
       }
