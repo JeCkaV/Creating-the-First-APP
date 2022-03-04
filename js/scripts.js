@@ -33,7 +33,7 @@ let pokemonRepository = (function () {
         name: 'Ditto',
         height: 0.3,
         type: ['normal']
-     }
+     },
 ];
 
 // add new pokemon to the list
@@ -43,7 +43,7 @@ function add(pokemon) {
 }
 
 //gets the pokemon list 
-function getAll {
+function getAll() {
    return pokemonList;
 }
 
@@ -61,30 +61,22 @@ function showDetails(pokemon) {
    let listItem = document.createElement('li');
    let createButton = document.createElement('button');
    button.innerText = "pokemon.name";
-   button.classList.add('mainButton');
+   button.classList.add('.class-Button');
    listItem.appendChild(button);
    pokemonList.appendChild(listItem);
  };
 
-         return {
-            getAll: getAll,
-            add: add,
-            addListItem: addListItem,
-            showDetails: showDetails,
-            };
+return {
+  getAll: getAll,
+  add: add,
+  addListItem: addListItem,
+  showDetails: showDetails,
+};
+
+})();
 
 
- })();
-
-
-    // for (let i=0; i < pokemonList.length; i++){
-       // if(pokemonList[i].height > 3){
-        //  document.write(pokemonList[i].name + "( height : " + pokemonList[i].height + ")" + "Wow it`s a big pokemon!!! <br>")
-        //}else {
-     //   document.write(pokemonList[i].name + "( height : " + pokemonList[i].height + ")<br>")
-   //   }
-   //   }
-pokemonRepository.getAll().forEach(function(pokemon) {
+   pokemonRepository.getAll().forEach(function (pokemon) {
    pokemonRepository.addListItem(pokemon);
 });
 
