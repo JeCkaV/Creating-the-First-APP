@@ -27,3 +27,8 @@
     text-shadow: #cc0000;
     padding-left: 10px;
   }
+
+  .pokemon-list {
+    list-style: none;
+    margin: 0 auto;
+  }
