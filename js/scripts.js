@@ -1,6 +1,7 @@
 // IIEF CREATED FOR POKEMON LIST //
 
 let pokemonRepository = (function () {
+//pokemon list
 
     let pokemonList = [
     {
@@ -35,15 +36,43 @@ let pokemonRepository = (function () {
      }
 ];
 
-         return {
-            getAll: function () {
-                return pokemonList;
-            },
+// add new pokemon to the list
 
-            add: function(pokemon) {
-                pokemonList.push(pokemon)
-            },
-         };
+function add(pokemon) {
+   pokemonList.push(pokemon);
+}
+
+//gets the pokemon list 
+function getAll {
+   return pokemonList;
+}
+
+
+//shows pokemon name when called
+
+function showDetails(pokemon) {
+      console.log(pokemon.name);
+}
+
+ // Creates button with Pokemon list
+
+ function addListItem(pokemon) {
+   let pokemonList = document.querySelector ('.pokemon-list');
+   let listItem = document.createElement('li');
+   let createButton = document.createElement('button');
+   button.innerText = "pokemon.name";
+   button.classList.add('mainButton');
+   listItem.appendChild(button);
+   pokemonList.appendChild(listItem);
+ };
+
+         return {
+            getAll: getAll,
+            add: add,
+            addListItem: addListItem,
+            showDetails: showDetails,
+            };
+
 
  })();
 
@@ -55,11 +84,12 @@ let pokemonRepository = (function () {
      //   document.write(pokemonList[i].name + "( height : " + pokemonList[i].height + ")<br>")
    //   }
    //   }
+pokemonRepository.getAll().forEach(function(pokemon) {
+   pokemonRepository.addListItem(pokemon);
+});
 
-    pokemonRepository.getAll().forEach(function (pokemon) {
-        document.write (pokemon.name + ": " + " type ("  + pokemon.type + ")" + " and " + "( height : "  + pokemon.height + ")  <br>  ") 
-    });
+  
 
-    console.log(pokemonRepository.getAll());
-    console.log(pokemonRepository.add({name: 'Squirtle', height: 1.08 , type: 'torrent' }));
-    console.log(pokemonRepository.getAll());
+   // console.log(pokemonRepository.getAll());
+   //console.log(pokemonRepository.add({name: 'Squirtle', height: 1.08 , type: 'torrent' }));
+    //console.log(pokemonRepository.getAll());
