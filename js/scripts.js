@@ -54,6 +54,14 @@ function showDetails(pokemon) {
       console.log(pokemon.name);
 }
 
+
+//adds a click listener when a pokemon button is pressed and shows pokemon name
+function addListener(button, pokemon) {
+   button.addEventListener("click", function() {
+      showDetails(pokemon);
+   });
+}
+
  // Creates button with Pokemon list
 
  function addListItem(pokemon) {
@@ -64,6 +72,7 @@ function showDetails(pokemon) {
    button.classList.add('button-class');
    listItem.appendChild(button);
    pokemonList.appendChild(listItem);
+   addListener(button,pokemon);
  };
 
 return {
