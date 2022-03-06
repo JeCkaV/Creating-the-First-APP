@@ -26,7 +26,7 @@
   }
 
   .title {
-    text-align: left;
+    text-align: center;
     color: #4d0909;
     text-shadow: #cc0000;
     padding-left: 10px;
@@ -35,4 +35,8 @@
   .pokemon-list {
     list-style: none;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 10px;
+    text-align: center;
   }
