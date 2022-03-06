@@ -1,9 +1,10 @@
-# Creating-the-First-APP
+# Pokedex APP 
 
-Title - Pokedex APP 
+## Project description 
+ My first ever created application. A small web application that loads data from an external API with 150 pokemons. Each button enables the viewing of data points in detai. When user click on a button with Pokemon name, a modal appears with pokemon's details: type, height and their image. 
 
-Project description - My first ever application. I will build a small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data points in detail;
+### Project Dependencies
+HTML, CSS, JavaScript ES6 Version
 
-Languages used - HTMS, CSS , JavaScript;
-
-API used - external;
+### APIs used
+pokeapi , url: https://pokeapi.co/api/v2/pokemon/?limit=150.
