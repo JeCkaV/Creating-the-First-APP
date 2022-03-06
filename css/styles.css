@@ -20,10 +20,14 @@
     background-color: rgb(238, 130, 180);
     color: yellow;
     border: 2px solid #cc0000;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: 0.9s;
+    transition-property: opacity;
   }
 
   .title {
     text-align: left;
+    color: #4d0909;
     text-shadow: #cc0000;
     padding-left: 10px;
   }
