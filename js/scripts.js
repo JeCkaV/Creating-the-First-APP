@@ -77,7 +77,7 @@ function loadDetails(item) {
  //shows pokemon name when called
  function showDetails(item) {
   pokemonRepository.loadDetails(item).then(function() {
-  console.log(item);
+  showModal;
 });
 }
 //adds a click listener when a pokemon button is pressed and shows pokemon name
@@ -94,7 +94,7 @@ function showModal(title, text) {
   modal.classList.add('modal');
   
   // Add the new modal content: first close button option
-  
+
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal-close');
   closeButtonElement.innerText = 'Close';
