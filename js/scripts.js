@@ -106,12 +106,8 @@
     let contentElement = document.createElement("p");
     contentElement.innerText = "Height: " + pokemon.height;
 
-    let container = document.querySelector('#image-container');
-
     let imageElement = document.createElement('img');
-    imageElement.setAttribute ("src", item.imageUrl);
-
-container.appendChild(myImage);
+    imageElement.setAttribute ("src", pokemon.imageUrl);
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
