@@ -102,17 +102,20 @@
     
     let titleElement = document.createElement("h1");
     titleElement.innerText = pokemon.name;
+
+     // ADDING AN IMAGE TO EACH POKEMON MODAL
+     let imageElement = document.createElement('img');
+     imageElement.classList.add('pokemon-image-class');
+     imageElement.setAttribute ("src", pokemon.imageUrl);
     
     let contentElement = document.createElement("p");
     contentElement.innerText = "Height: " + pokemon.height;
 
-    let imageElement = document.createElement('img');
-    imageElement.setAttribute ("src", pokemon.imageUrl);
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
     modal.appendChild(imageElement);
+    modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
     
     modalContainer.classList.add("is-visible");

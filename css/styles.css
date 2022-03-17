@@ -104,3 +104,17 @@
     text-align: center;
     margin-bottom: 0;
   }
+
+  .pokemon-image-class {
+      width: 250px;
+      height: auto;
+      margin-right: 40px; 
+      border-radius: 50% ;
+ }
+
+@media screen and (max-width:600px) {
+   .pokemon-image-class {
+       width: auto;
+       height: auto;
+   }   
+}
