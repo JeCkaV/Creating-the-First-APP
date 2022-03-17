@@ -106,10 +106,17 @@
     let contentElement = document.createElement("p");
     contentElement.innerText = "Height: " + pokemon.height;
 
+    let container = document.querySelector('#image-container');
+
+    let imageElement = document.createElement('img');
+    imageElement.setAttribute ("src", item.imageUrl);
+
+container.appendChild(myImage);
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(imageElement);
     modalContainer.appendChild(modal);
     
     modalContainer.classList.add("is-visible");
