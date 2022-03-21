@@ -4,11 +4,28 @@
       --color-darkgrey: rgb(49, 49, 43);
       --color-black: #000;
       --color-white: #eee;
+      --background-header-color: rgb(255, 170, 170);
+      --background-color: 
     }
 
     body {
-      background-color: #777;
+      background-color: rgb(212, 106, 106);
     }
+
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem 0;
+      background: rgb(255, 170, 170);
+  }
+
+#pokemon__logo {
+    padding: 2rem 0;
+    max-width: 50vw;
+    height: auto;
+}
 
     .button-class {
       padding: 16px 32px;
