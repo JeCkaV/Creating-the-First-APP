@@ -47,47 +47,39 @@
 
   function showModal(pokemon) {
     let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    let modalHeader = $(".modal-header");
+
     modalBody.empty();
+    modalTitle.empty();
 
     //creates pokemon name
-    let pokemonName = document.createElement("h1");
-    pName = properCasing(pokemon.name);
-    pokemonName.innerText = pName;
-    pokemonName.classList.add("pokemon-name");
+    let pokemonName = $ ("<h1>" + pokemon.name + "</h1>");
 
     //creates pokemon image
-    let pokemonImage = document.createElement("img");
-    pokemonImage.src = pokemon.imageUrl;
-    pokemonImage.classList.add("pokemon-image");
+    let pokemonImage = $('<img class="modal-img" style="width:50%">');
+    imageElement.attr("src", pokemon.imageUrl);
+    //  let imageElementBack = $ ('<img class="modal-img" style="width:50%">');
+   // imageElementBack.attr("src", pokemon.imageUrlBack);
+
 
     //creates pokemon height
-    let pokemonHeight = document.createElement("p");
-    let pHeightCm = pokemon.height * 10;
-    pokemonHeight.innerText = `Height: ${pHeightCm} cm`;
-    pokemonHeight.classList.add("pokemon-height");
-    
-    //creates type(s) of pokemon list
-    let pokemonTypesLocation = document.createElement("p");
-    let pokemonTypes = pokemon.types;
-    let pokemonTypesList = "";
-    if (!pokemonTypes) {
-      pokemonTypesList = "None";
-    } else {
-      let firstType = properCasing(pokemonTypes[0].type.name);
-      pokemonTypesList += `${firstType}`;
-      for (i = 1; i < pokemonTypes.length; i++) {
-        let type = properCasing(pokemonTypes[i].type.name);
-        pokemonTypesList += `, ${type}`;
-      }
-    }
-    let formatType = pokemonTypes.length < 2 ? "Type: " : "Types: ";
-    pokemonTypesLocation.innerText = `${formatType}${pokemonTypesList}`;
-    pokemonTypesLocation.classList.add("pokemon-types");
+    let pokemonHeight = $("<p>" + "height : " + pokemon.height + "</p>");
 
+    //creates type(s) of pokemon list
+    let pokemonTtypes = $("<p>" + "types : " + pokemon.types + "</p>");
+
+    //show abilities in the modal
+
+    let pokemonAbilities = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
+
+    
+    modalTitle.appent(nameElement)
     modalBody.append(pokemonName);
     modalBody.append(pokemonHeight);
-    modalBody.append(pokemonTypesLocation);
+    modalBody.append(pokemonTypes);
     modalBody.append(pokemonImage);
+    modalBody.append(pokemonAbilities);
   }
 
    //adds a click listener and when a pokemon button is pressed it shows pokemon name
@@ -133,15 +125,15 @@
       });
   }
 
-  function loadDetails(item) {
- let url = item.detailsUrl;
+  function loadDetails(pokemon) {
+ let url = pokemon.detailsUrl;
     return fetch(url)
       .then(function (response) {
         return response.json();
       })
       .then(function (details) {
          // Now we add the details to the item
-         item.imageUrl = details.sprites.front_default;
+         pokemon.imageUrl = details.sprites.front_default;
          item.height = details.height;
          item.types = details.types;
        })
@@ -150,12 +142,17 @@
        });
    }
    return {
-     add: add,
-     getAll: getAll,
-     addListItem: addListItem,
-     showDetails: showDetails,
-     loadList: loadList,
-     loadDetails: loadDetails,
+    add: add,
+    getAll: getAll,
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails,
+    addListItem: addListItem,
+    ifPokemonSelected: ifPokemonSelected,
+    showLoadingMessage: showLoadingMessage,
+    hideLoadingMessage: hideLoadingMessage,
+    showModal: showModal,
+    hideModal: hideModal
     };
   })();
 
