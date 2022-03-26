@@ -4,7 +4,7 @@
     let modalContainer = document.querySelector('.modal-container');
     
     //pokemon list taken from an external API
-  let respository = [];
+  let repository = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   //Checking if the pokemon added is an Object
@@ -14,7 +14,7 @@
 
      //gets the pokemon list 
      function getAll() {
-        return respository;
+        return repository;
      }
 
       //Find a pokemon by name
@@ -149,10 +149,7 @@
     showDetails: showDetails,
     addListItem: addListItem,
     ifPokemonSelected: ifPokemonSelected,
-    showLoadingMessage: showLoadingMessage,
-    hideLoadingMessage: hideLoadingMessage,
     showModal: showModal,
-    hideModal: hideModal
     };
   })();
 
