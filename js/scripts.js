@@ -1,7 +1,8 @@
 //Start of IIFE
 let pokemonRepository = (function () {
-  let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    
+     let pokemonList = [];
+     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 //add new pokemon to pokemonList
 function add(pokemon) {
@@ -12,6 +13,13 @@ function add(pokemon) {
   function getAll() {
     return pokemonList;
   }
+
+  //Find a pokemon by name
+  function find(text) {
+    let result = pokemonList.filter(singlePokemon => singlePokemon.name === text);
+    if (result.length === 0) alert("Pokemon Not Found");
+    else alert("Pokemon found");
+}
 
 //create button of pokemons
   function addListItem(pokemon){
