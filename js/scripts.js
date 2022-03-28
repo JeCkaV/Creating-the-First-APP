@@ -95,6 +95,14 @@ function add(pokemon) {
       let pokemonImage = $('<img class=\'pokemon-modal-image\'>');
       pokemonImage.attr('src', item.imageUrl); // pokemon image attribute loaded from 'item.imageUrl'
 
+       //Injecting values into the div
+       $('.height__attr').text(height * 10 + 'cm');
+       $('.weight__attr').text(weight / 10 + 'kg');
+
+       //Spacing properly the list of abilities
+       let skills = abilities.join(', ');
+       $('.abilities__attr').text(skills);
+
       modalTitle.empty(); // clears the modalTitle after display
       modalBody.empty(); // clears the modalBody after display
 
