@@ -1,114 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pokemon Dictionary</title>
-    <link rel="shortcut icon" href="./img/pokemon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" type="text/css" href="dist/styles.mini.css" />
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Pokemon Dictionary</title>
+      <link rel="shortcut icon" href="./img/pokemon.png" type="image/x-icon" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="stylesheet" type="text/css" href="dist/styles.mini.css" />
 
-</head>
+  </head>
 
-  <body>
+    <body>
 
-    <!-- NAVIGATION BAR -->
+      <!-- NAVIGATION BAR -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning justify-content-between">
+      <nav class="navbar navbar-expand-lg navbar-light bg-warning justify-content-between">
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon float-right" aria-label="Toggle navigation"></span>
-       </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon float-right" aria-label="Toggle navigation"></span>
+        </button>
 
-      <div class="container">
-          <a class="navbar-brand" href="#">
-              <img class="logo__img img-fluid" src="img/pokemon__logo.png" alt="">
-        </a>
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="logo__img img-fluid" src="img/pokemon__logo.png" alt="">
+          </a>
 
-          <div class="collapse navbar-collapse text-center justify-content-around" id="navbarToggler">
+            <div class="collapse navbar-collapse text-center justify-content-around" id="navbarToggler">
 
-              <div class="navbar-nav flex-lg-row">
-                  <a class="nav-item nav-link active px-3" href="#">Home <span class="sr-only">(current)</span></a>
-                  <a class="nav-item nav-link px-3" href="https://pokeapi.co/" target="blank">API</a>
-                  <a class="nav-item nav-link px-3" href="https://jeckav.github.io/Portfolio-Website-JVG/" target="blank">Portfolio</a>
+                <div class="navbar-nav flex-lg-row">
+                    <a class="nav-item nav-link active px-3" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link px-3" href="https://pokeapi.co/" target="blank">API</a>
+                    <a class="nav-item nav-link px-3" href="https://jeckav.github.io/Portfolio-Website-JVG/" target="blank">Portfolio</a>
+                </div>
+
+                <div class="p-2">
+                    <form class="form-inline">
+                    <input id="search-poke" class="form-control mr-sm-2 search" type="search" placeholder="Search a pokemon" aria-label="Search">
+                </form>         
               </div>
 
-              <div class="p-2">
-                  <form class="form-inline">
-                  <input class="form-control mr-sm-2 search" type="search" placeholder="Search a pokemon" aria-label="Search">
-              </form>         
-             </div>
+            </div>
+        </div>
+    </nav>
 
+    <header class="container page-container">
+      <div class="row">
+          <div class="col text-center h3">
+              Click on the name and check Pokemon details
           </div>
       </div>
-  </nav>
+      <div class="row">
+          <div class="col pokemon__column d-flex flex-wrap">
 
-  <header class="container page-container">
-    <div class="row">
-        <div class="col text-center h2">
-            Click on the name and check Pokemon details
-        </div>
-    </div>
-    <div class="row">
-        <div class="col pokemon__column d-flex flex-wrap">
+          </div>
+          <!-- Will be populated with Pokemons with the script -->
+      </div>
+  </header>
 
-        </div>
-        <!-- Will be populated with Pokemons with the script -->
-    </div>
-</header>
-
-  <main>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <ul class="list-group list-unstyled flex-row flex-wrap w-100 just-content: center" data-toggle="modal" data-target="#Pokemon"></ul>
-            <div class="modal fade" id="Pokemon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="col-12 modal-title text-center text-capitalize" id="exampleModalLabel"></h5>
-                  </div>
-                        <div class="modal-body text-capitalize">
-                             ...
-                        </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                      Close
-                    </button>
+    <main>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <ul class="list-group list-unstyled flex-row flex-wrap w-100 just-content: center" data-toggle="modal" data-target="#Pokemon"></ul>
+              <div class="modal fade" id="Pokemon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="col-12 modal-title text-center text-capitalize" id="exampleModalLabel"></h5>
+                    </div>
+                          <div class="modal-body text-capitalize">
+                              ...
+                          </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-  </main>
-      <!-- <div id="loading-element"></div>
-      <ul class="pokemon-list list-group"></ul>
-      <div id='modal-container'></div>
-      <div class = "button-wrapper"></div>
-      <div id='image-container'></div> -->
-      <script
-          src="https://code.jquery.com/jquery-3.6.0.min.js"
-          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-          crossorigin="anonymous"
-        ></script>
-        <!-- jquery minified version is added instead of the slim.min.js version -->
+    </main>
+        <!-- <div id="loading-element"></div>
+        <ul class="pokemon-list list-group"></ul>
+        <div id='modal-container'></div>
+        <div class = "button-wrapper"></div>
+        <div id='image-container'></div> -->
         <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-          crossorigin="anonymous"
-        ></script>
-    <script src="js/promise-polyfill.js"></script>
-    <script src="js/fetch-polyfill.js"></script>
-    <script src="dist/script.mini.js"></script>
-  </body>
-</html>
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+          ></script>
+          <!-- jquery minified version is added instead of the slim.min.js version -->
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+          ></script>
+      <script src="js/promise-polyfill.js"></script>
+      <script src="js/fetch-polyfill.js"></script>
+      <script src="dist/script.mini.js"></script>
+
+    </body>
+  </html>
