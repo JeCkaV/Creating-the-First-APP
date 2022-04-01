@@ -9,3 +9,5 @@ HTML, CSS, JavaScript ES6 Version
 
 ### APIs used
 pokeapi , url: https://pokeapi.co/api/v2/pokemon/?limit=150.
+![](img/screenshot1.jpg)
+![](img/screenshot2.jpg)
