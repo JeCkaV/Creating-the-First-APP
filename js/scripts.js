@@ -1,8 +1,10 @@
   //Start of IIFE
-  let pokemonRepository = (function () {
+  const pokemonRepository = (function () {
       
-      let pokemonList = [];
+      const pokemonList = [];
       let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
+    
 
   //add new pokemon to pokemonList
   function add(pokemon) {
@@ -33,9 +35,9 @@
 
   //create button of pokemons
     function addListItem(pokemon){
-      let pokemonList = document.querySelector('.list-group');
-      let listpokemon = document.createElement('li');
-      let button = document.createElement('button');
+      const pokemonList = document.querySelector('.list-group');
+      const listpokemon = document.createElement('li');
+      const button = document.createElement('button');
       button.innerText = pokemon.name;
       button.classList.add('btn-primary');
       listpokemon.classList.add('group-list-item');
@@ -51,7 +53,7 @@
           return response.json();
         }).then(function (json) {
           json.results.forEach(function (item) {
-            let pokemon = {
+            const pokemon = {
               name: item.name,
               detailsUrl: item.url
             };
@@ -64,7 +66,7 @@
       }
   //load data of each pokemon when click on pokemon
       function loadDetails(item) {
-        let url = item.detailsUrl;
+        const url = item.detailsUrl;
         return fetch(url).then(function (response) {
           return response.json();
         }).then(function (details) {
@@ -74,7 +76,7 @@
           item.weight = details.weight;
           item.types = details.types;
           item.abilities = [];
-          for (let i = 0; i < details.abilities.length; i++) {
+          for (const i = 0; i < details.abilities.length; i++) {
             item.abilities.push(details.abilities[i].ability.name);
           }
         }).catch(function (e) {
@@ -90,19 +92,19 @@
 
       function showModal(item) {
         // showModal function
-        let modalTitle = $('.modal-title'); // modalTitle
-        let modalBody = $('.modal-body'); // modalBody
-        // let modalHeader = $(".modal-header"); // no header so removed
+        const modalTitle = $('.modal-title'); // modalTitle
+        const modalBody = $('.modal-body'); // modalBody
+        // const modalHeader = $(".modal-header"); // no header so removed
 
-        let pokemonName = $('<h2>' + item.name + '</h2>');
+        const pokemonName = $('<h2>' + item.name + '</h2>');
 
-        let pokemonHeight = $('<p>' + 'Height: ' + item.height + '</p>');
+        const pokemonHeight = $('<p>' + 'Height: ' + item.height + '</p>');
 
-        let pokemonWeight = $('<p>' + 'Weight: ' + item.weight + '</p>');
+        const pokemonWeight = $('<p>' + 'Weight: ' + item.weight + '</p>');
 
-        let pokemonAbilities = $('<p>' + 'Abilities: ' + item.abilities + '</p>');
+        const pokemonAbilities = $('<p>' + 'Abilities: ' + item.abilities + '</p>');
 
-        let pokemonImage = $('<img class=\'pokemon-modal-image\'>');
+        const pokemonImage = $('<img class=\'pokemon-modal-image\'>');
         pokemonImage.attr('src', item.imageUrl); // pokemon image attribute loaded from 'item.imageUrl'
 
         //Injecting values into the div
@@ -110,7 +112,7 @@
         $('.weight__attr').text(item.weight / 10 + 'kg');
 
         //Spacing properly the list of abilities
-        let skills = item.abilities.join(', ');
+        const skills = item.abilities.join(', ');
         $('.abilities__attr').text(skills);
 
         modalTitle.empty(); // clears the modalTitle after display
@@ -124,12 +126,12 @@
       }
 
     return {
-      add: add,
-      getAll: getAll,
-      addListItem: addListItem,
-      loadList: loadList,
-      loadDetails: loadDetails,
-      showDetails: showDetails
+      add,
+      getAll,
+      addListItem,
+      loadList,
+      loadDetails,
+      showDetails
     };
   })();//end of IIFE
 
